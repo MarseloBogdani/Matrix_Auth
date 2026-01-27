@@ -1,0 +1,52 @@
+# 🟢 The Matrix Environment
+
+A high-contrast, secure authentication dashboard built with **Python**, **CustomTkinter**, and **SQLite**. This application demonstrates a full-stack approach to desktop software, featuring encrypted user registration, dynamic state management, and Object-Oriented Programming (OOP) architecture.
+
+## 🚀 Key Features
+
+* **Cryptographic Security:** Implements `SHA-256` one-way hashing via the `hashlib` library to ensure user passwords are never stored in plain text.
+* **Persistent Database:** Integrated `SQLite3` backend for reliable, local data persistence.
+* **Dynamic View Management:** Uses a centralized frame-switching architecture to navigate between Welcome, Sign-Up, Login, and the "Matrix Site" without opening multiple windows.
+* **Interactive UX:** Includes a "See/Hide" password toggle and real-time input validation for alphanumeric constraints.
+* **Custom Styling:** Styled with a "Matrix" aesthetic (Green-on-Black) using the `CustomTkinter` framework.
+
+## 🛠️ Technical Stack
+
+* **Language:** Python 3.10+
+* **GUI Library:** CustomTkinter
+* **Database:** SQLite3
+* **Security:** Hashlib (SHA-256)
+
+
+
+## 🏗️ Architecture & Design Patterns
+
+This project prioritizes clean, maintainable code through the following standards:
+
+1.  **Object-Oriented Programming (OOP):** The entire application is encapsulated within the `MatrixApp` class, inheriting from `tk.CTk`. This eliminates global variables and allows for clean state sharing via `self`.
+2.  **Resource Management:** Implements Python's context managers (`with` statements) for database operations to prevent memory leaks and ensure connection safety.
+3.  **Encapsulation:** UI logic (page layouts) is strictly separated from Backend logic (hashing and SQL queries).
+4.  **Input Sanitization:** Validates user strings using `.isalnum()` to ensure data integrity before database insertion.
+
+
+
+## 📦 Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/yourusername/matrix-environment.git](https://github.com/yourusername/matrix-environment.git)
+    cd matrix-environment
+    ```
+
+2.  **Install the GUI framework:**
+    ```bash
+    pip install customtkinter
+    ```
+
+3.  **Run the application:**
+    ```bash
+    python main.py
+    ```
+
+---------------------------------
+Developed by Marselo Bogdani
