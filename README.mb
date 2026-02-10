@@ -1,8 +1,8 @@
-# 🟢 The Matrix Environment
+#  The Matrix Environment
 
 A high-contrast, secure authentication dashboard built with **Python**, **CustomTkinter**, and **SQLite**. This application demonstrates a full-stack approach to desktop software, featuring encrypted user registration, dynamic state management, and Object-Oriented Programming (OOP) architecture.
 
-## 🚀 Key Features
+## Key Features
 
 * **Cryptographic Security:** Implements `SHA-256` one-way hashing via the `hashlib` library to ensure user passwords are never stored in plain text.
 * **Persistent Database:** Integrated `SQLite3` backend for reliable, local data persistence.
@@ -10,7 +10,7 @@ A high-contrast, secure authentication dashboard built with **Python**, **Custom
 * **Interactive UX:** Includes a "See/Hide" password toggle and real-time input validation for alphanumeric constraints.
 * **Custom Styling:** Styled with a "Matrix" aesthetic (Green-on-Black) using the `CustomTkinter` framework.
 
-## 🛠️ Technical Stack
+## Technical Stack
 
 * **Language:** Python 3.10+
 * **GUI Library:** CustomTkinter
@@ -19,7 +19,7 @@ A high-contrast, secure authentication dashboard built with **Python**, **Custom
 
 
 
-## 🏗️ Architecture & Design Patterns
+## Architecture & Design Patterns
 
 This project prioritizes clean, maintainable code through the following standards:
 
@@ -30,7 +30,7 @@ This project prioritizes clean, maintainable code through the following standard
 
 
 
-## 📦 Installation
+## Installation
 
 1.  **Clone the repository:**
     ```bash
