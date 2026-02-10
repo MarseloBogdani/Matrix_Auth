@@ -5,19 +5,17 @@ import hashlib
 class MatrixApp(tk.CTk):
     """
     A Secure Authentication System providing a 'Matrix' themed interface.
-    Handles user registration, encrypted login, and persistent data storage.
     """
     def __init__(self):
         super().__init__()
 
         self.title("Matrix")
         self.geometry("450x200")
-        self.resizable(False, False) # Lock window dimensions
+        self.resizable(False, False)
 
         tk.set_appearance_mode("System")
         tk.set_default_color_theme("dark-blue")
         
-        # Initialize backend storage
         self.create_database()
 
         # Frames
@@ -26,7 +24,7 @@ class MatrixApp(tk.CTk):
         self.frame_login = tk.CTkFrame(self, fg_color="#000C04", corner_radius=0)
         self.matrix_site = tk.CTkScrollableFrame(self, fg_color="#000C04", corner_radius=0)
 
-        # Launch the entry point of the app
+        
         self.setup_welcome_page()
         self.show_frame(self.frame_welcome)
 
@@ -143,10 +141,8 @@ class MatrixApp(tk.CTk):
                     corner_radius=100, hover_color="#1C0101",
                     command=lambda: self.check_login(ent_user.get(), ent_pass.get(), lbl_invalid)).place(x=307, y=138)
 
-    # --- Authenticate/Security Methods ---
 
     def validate_signup(self, name, password, lbl_name, lbl_pass):
-        """Validates input constraints and registers new users in the DB."""
         if not name or not password:
             lbl_name.configure(text="Fields Empty")
             return
@@ -164,7 +160,6 @@ class MatrixApp(tk.CTk):
             lbl_name.configure(text="User Already Exists!")
 
     def check_login(self, name, password, lbl_err):
-        """Verifies credentials against the hashed data in SQLite."""
         h = self.hash_password(password)
         with sqlite3.connect("users.db") as conn:
             res = conn.execute('SELECT * FROM users WHERE username=? AND password_hash=?', (name, h)).fetchone()
@@ -174,7 +169,6 @@ class MatrixApp(tk.CTk):
                 lbl_err.configure(text="User Not Found!")
 
     def show_matrix_site(self):
-        """Displays the restricted 'Matrix' area upon successful login."""
         self.show_frame(self.matrix_site)
         tk.CTkLabel(self.matrix_site, text="Welcome to the Matrix!", text_color="#2DFF08", font=("Segoe UI", 40)).pack(pady=50)
 
