@@ -175,3 +175,4 @@ class MatrixApp(tk.CTk):
 if __name__ == "__main__":
     app = MatrixApp()
     app.mainloop()
+    print("mars")
